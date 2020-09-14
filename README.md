@@ -119,7 +119,7 @@ sudo kextcache -i / && sudo kextcache -u /
 - 复制BIOS Mod中的EFI文件夹到U盘上的EFI分区
 - 重启，F12选择从U盘引导
 - 按 = 键来显示项目列表,接着Ctrl+F搜索 setup_var
-- 找到0x3C的地址码(屏幕左上角有显示)     
+- 找到0x3E的地址码(屏幕左上角有显示)     
 - 将0x01的数值改为0x00 
 - 按Ctrl+W来写入修改的数值,重启电脑. 
    现在你可以在hackintool中的日志输出检查CFG LOCK的状态了  
