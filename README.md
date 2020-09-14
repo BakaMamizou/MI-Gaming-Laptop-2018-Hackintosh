@@ -29,29 +29,30 @@
 * Fn亮度调节
 * 内建摄像头
 * 内建麦克风 
-* Intel网卡的蓝牙
+* 蓝牙
 * FileVault磁盘加密 (每次启动之前会自动备份，不建议开启)
 * FN快捷键
 * 读卡器
 
 ### 半完美的部件
 * Intel无线网卡(有图标显示 可切换网络 不支持WPA2-Enterprise加密)
-* [Heliport提供无线网络连接的GUI](https://github.com/1hbb/OpenIntelWireless-Factory/releases)
+* [Heliport提供无线网络连接的GUI](https://github.com/OpenIntelWireless/HeliPort)
 
 ### 不工作的部件:
 * Nvidia独立显卡(10.13/14可以用Web Driver驱动，之后的版本不支持)
 * HDMI输出
 * 隔空传送 隔空投射(无线网卡不能正常驱动的锅)
 
-
-##安装过程
+## 安装过程
 制作安装媒介:
 * 在您的Mac/虚拟机上创建安装媒介(e.g. https://support.apple.com/ZH-cn/HT201372)
 * 挂载U盘上的ESP(EFI)分区 : (注意在终端挂载分区时的磁碟号，一定要挂载U盘上的！！！)
-*终端输入示例
+* 终端输入示例
+```
 diskutil list
 sudo diskutil mount /dev/disk3s1(注意！是U盘的EFI分区！)
 ```
+
 * 将Clover EFI文件夹里的EFI文件夹复制到U盘的EFI分区上.
 * 弹出U盘，插入到笔记本上
 开始安装黑苹果:
@@ -69,11 +70,11 @@ sudo diskutil mount /dev/disk3s1(注意！是U盘的EFI分区！)
 diskutil list
 sudo diskutil mount /dev/disk0s1
 ```
-使用OpenCore方式的:
+### 使用OpenCore方式的:
 * 复制此项目的OpenCore EFI内的EFI文件夹到黑苹果的EFI分区
 * 将U盘从电脑弹出，重启，开机选择从硬盘引导
 * 开始你的黑苹果之旅
-使用CloverEFI的
+### 使用CloverEFI的
 * 复制此项目的Clover EFI内的EFI文件夹到黑苹果的EFI分区
 * 复制EFI/CLOVER/kexts/Other内的所有文件到 /Library/Extensions folder (若不进行这一步骤，有些硬件可能无法被驱动，如触摸板，网卡等)
 * 在终端内输入以下指令以重建Kext缓存:
@@ -94,7 +95,7 @@ sudo kextcache -i / && sudo kextcache -u /
 
 # 疑难解答
 ### 一些设备在MacOS下不驱动
-用Clover做引导的:
+用Clover引导:
 * 确保所有的kext文件在 /Library/Extensions/ 中:
 * 在终端输入以下指令重建Kext缓存(sudo指令完会要求你输入电脑密码)
 ```
@@ -108,22 +109,22 @@ sudo kextcache -i / && sudo kextcache -u /
 ```
 * 重启电脑
 
-Using OpenCore:
+使用OpenCore引导:
 *  确保所有的kext文件在硬盘ESP分区中的EFI/OC/kexts 文件夹内.
-* 重启,在OpenCore界面重置NVRAM(OpenCore界面出现时,按压空格并选择重置NVRAM)
+*  重启,在OpenCore界面重置NVRAM(OpenCore界面出现时,按压空格并选择重置NVRAM)
 
 # CFG解锁方法
 
-##注意！修改BIOS属于高风险操作，本人不对因修改BIOS出现的任何问题负责  
+## 注意！修改BIOS属于高风险操作，本人不对因修改BIOS出现的任何问题负责  
   
-1- 复制BIOS Mod中的EFI文件夹到U盘上的EFI分区
-2- 重启，F12选择从U盘引导
-3- 按 = 键来显示项目列表,接着Ctrl+F搜索 setup_var
-4- 找到0x3C的地址码(屏幕左上角有显示)     
-5- 将0x01的数值改为0x00 
-6- 按Ctrl+W来写入修改的数值,重启电脑. 
+* 1- 复制BIOS Mod中的EFI文件夹到U盘上的EFI分区
+* 2- 重启，F12选择从U盘引导
+* 3- 按 = 键来显示项目列表,接着Ctrl+F搜索 setup_var
+* 4- 找到0x3C的地址码(屏幕左上角有显示)     
+* 5- 将0x01的数值改为0x00 
+* 6- 按Ctrl+W来写入修改的数值,重启电脑. 
    现在你可以在hackintool中的日志输出检查CFG LOCK的状态了  
 
 ### 关于无线网卡驱动
-虽然还是有些BUG，比如没有原生WIFI支持,隔空传送等，但总比不能用好吧==
-感谢OpenIntelWireless项目提供的kext(https://github.com/OpenIntelWireless/itlwm)和HeliPort无线网络连接界面(https://github.com/OpenIntelWireless/HeliPort)
+* 虽然还是有些BUG，比如没有原生WIFI支持,隔空传送等，但总比不能用好吧==
+* 感谢OpenIntelWireless项目提供的kext(https://github.com/OpenIntelWireless/itlwm)和HeliPort无线网络连接界面(https://github.com/OpenIntelWireless/HeliPort)
