@@ -114,17 +114,16 @@ sudo kextcache -i / && sudo kextcache -u /
 *  重启,在OpenCore界面重置NVRAM(OpenCore界面出现时,按压空格并选择重置NVRAM)
 
 # CFG解锁方法
-
 ## 注意！修改BIOS属于高风险操作，本人不对因修改BIOS出现的任何问题负责  
   
-* 1- 复制BIOS Mod中的EFI文件夹到U盘上的EFI分区
-* 2- 重启，F12选择从U盘引导
-* 3- 按 = 键来显示项目列表,接着Ctrl+F搜索 setup_var
-* 4- 找到0x3C的地址码(屏幕左上角有显示)     
-* 5- 将0x01的数值改为0x00 
-* 6- 按Ctrl+W来写入修改的数值,重启电脑. 
+- 复制BIOS Mod中的EFI文件夹到U盘上的EFI分区
+- 重启，F12选择从U盘引导
+- 按 = 键来显示项目列表,接着Ctrl+F搜索 setup_var
+- 找到0x3C的地址码(屏幕左上角有显示)     
+- 将0x01的数值改为0x00 
+- 按Ctrl+W来写入修改的数值,重启电脑. 
    现在你可以在hackintool中的日志输出检查CFG LOCK的状态了  
 
 ### 关于无线网卡驱动
 * 虽然还是有些BUG，比如没有原生WIFI支持,隔空传送等，但总比不能用好吧==
-* 感谢OpenIntelWireless项目提供的kext(https://github.com/OpenIntelWireless/itlwm)和HeliPort无线网络连接界面(https://github.com/OpenIntelWireless/HeliPort)
+* 感谢OpenIntelWireless项目提供的kext与HeliPort无线网络连接界面(https://github.com/OpenIntelWireless)
