@@ -45,7 +45,7 @@
 
 ## 安装过程
 制作安装媒介:
-* 在您的Mac/虚拟机上创建安装媒介(e.g. https://support.apple.com/ZH-cn/HT201372)
+* 在您的Mac/虚拟机上创建安装媒介(e.g. https://support.apple.com/zh-cn/HT201372)
 * 挂载U盘上的ESP(EFI)分区 : (注意在终端挂载分区时的磁碟号，一定要挂载U盘上的！！！)
 * 终端输入示例
 ```
