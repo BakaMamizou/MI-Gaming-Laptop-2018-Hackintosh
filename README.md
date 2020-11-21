@@ -1,11 +1,14 @@
 # MI-Gaming-Laptop-2018-Hackintosh
 小米游戏本八代增强版EFI
+2020.11.21 更新:升级OC版本至0.6.3 
+使用Airportitlwm.kext替换itlwm
+clover方式不再更新
 
 ### 支持的MacOS版本:
 * macOS 10.13 High Sierra
 * macOS 10.14 Mojave
 * macOS 10.15 Catalina
-* macOS 11.00 Big Sur (Beta)
+* macOS 11.00 Big Sur
 
 ### 在开始之前
 * 一台i7-8750h/i5-8300h的小米笔记本
@@ -35,8 +38,7 @@
 * 读卡器
 
 ### 半完美的部件
-* Intel无线网卡(有图标显示 可切换网络 不支持WPA2-Enterprise加密)
-* [Heliport提供无线网络连接的GUI](https://github.com/OpenIntelWireless/HeliPort)
+* Intel9560AC无线网卡(原生网络支持 半完美HandOff 不支持WPA2-Enterprise加密)
 
 ### 不工作的部件:
 * Nvidia独立显卡(10.13/14可以用Web Driver驱动，之后的版本不支持)
@@ -125,5 +127,4 @@ sudo kextcache -i / && sudo kextcache -u /
    现在你可以在hackintool中的日志输出检查CFG LOCK的状态了  
 
 ### 关于无线网卡驱动
-* 虽然还是有些BUG，比如没有原生WIFI支持,隔空传送等，但总比不能用好吧==
 * 感谢OpenIntelWireless项目提供的kext与HeliPort无线网络连接界面(https://github.com/OpenIntelWireless)
