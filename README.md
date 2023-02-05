@@ -1,5 +1,6 @@
 # MI-Gaming-Laptop-2018-Hackintosh
 小米游戏本八代增强版EFI
+2023.2.6 更新支持macOS Ventura Opencore版本更新至0.8.8
 2020.11.21 更新:升级OC版本至0.6.3 
 使用Airportitlwm.kext替换itlwm
 clover方式引导文件不再更新
@@ -9,6 +10,8 @@ clover方式引导文件不再更新
 * macOS 10.14 Mojave
 * macOS 10.15 Catalina
 * macOS 11.00 Big Sur
+* macOS 12.00 Monterey
+* macOS 13.00 Ventura
 
 ### 在开始之前
 * 一台i7-8750h/i5-8300h的小米笔记本
@@ -38,7 +41,7 @@ clover方式引导文件不再更新
 * 读卡器
 
 ### 半完美的部件
-* Intel9560AC无线网卡(原生网络支持 半完美HandOff 不支持WPA2-Enterprise加密)
+* Intel9560AC无线网卡(原生网络支持 半完美HandOff 不支持WPA2-Enterprise加密 隔空传送半残废)
 
 ### 不工作的部件:
 * Nvidia独立显卡(10.13/14可以用Web Driver驱动，之后的版本不支持)
@@ -125,6 +128,3 @@ sudo kextcache -i / && sudo kextcache -u /
 - 将0x01的数值改为0x00 
 - 按Ctrl+W来写入修改的数值,重启电脑. 
    现在你可以在hackintool中的日志输出检查CFG LOCK的状态了  
-
-### 关于无线网卡驱动
-* 感谢OpenIntelWireless项目提供的kext与HeliPort无线网络连接界面(https://github.com/OpenIntelWireless)
