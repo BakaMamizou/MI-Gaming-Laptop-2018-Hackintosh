@@ -1,9 +1,9 @@
 # MI-Gaming-Laptop-2018-Hackintosh
-小米游戏本八代增强版EFI
-2023.2.6 更新支持macOS Ventura Opencore版本更新至0.8.8
-2020.11.21 更新:升级OC版本至0.6.3 
-使用Airportitlwm.kext替换itlwm
-clover方式引导文件不再更新
+小米游戏本八代增强版EFI  
+2023.2.6 更新支持macOS Ventura Opencore版本更新至0.8.8  
+2020.11.21 更新:升级OC版本至0.6.3  
+使用Airportitlwm.kext替换itlwm  
+clover方式引导文件不再更新  
 
 ### 支持的MacOS版本:
 * macOS 10.13 High Sierra
